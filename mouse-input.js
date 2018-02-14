@@ -2,15 +2,14 @@ var freqA = 174;
 var freqS = 196;
 var freqD = 220;
 var freqF = 246;
-var freqG = 268;
 
-var oscA, oscS, oscD, oscF, oscG;
+
+var oscA, oscS, oscD, oscF;
 
 var playingA = false;
 var playingS = false;
 var playingD = false;
 var playingF = false;
-var playingG = false;
 
 
 function setup() {
@@ -41,11 +40,6 @@ function setup() {
   oscF.amp(0);
   oscF.start();
   
-  oscG = new p5.Oscillator();
-  oscG.setType('triangle');
-  oscG.freq(freqG);
-  oscG.amp(0);
-  oscG.start();
   
 }
 
@@ -83,10 +77,11 @@ function keyPressed() {
   
 function mousePressed() {
   print("got key press for ", mouseIsPressed);
-  var osc;
   if (mouseIsPressed == "mousePress")
-    osc = oscG;
-  	playingG = true;
+    osc = oscA;
+    frequencyA = frequencyA + 50
+  	oscA.freq(freqA)
+  	playingA = true;
   
 }
 function draw() {
