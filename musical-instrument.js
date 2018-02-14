@@ -1,4 +1,3 @@
-
 var freqA = 174;
 var freqS = 196;
 var freqD = 220;
@@ -90,25 +89,5 @@ function draw() {
   if (playingF) {
     ellipse (50, 50, 100, 100);
   }
-}
 
-function keyReleased() {
-  print("got key release for ", key);
-  var osc;
-  if (key == 'A') {
-    osc = oscA;
-  } else if (key == 'S') {
-    osc = oscS;
-  } else if (key == 'D') {
-    osc = oscD;
-  } else if (key == 'F') {
-    osc = oscF;
   }
-  if (osc) {
-    osc.amp(0, .5);
-    playingA = false;
-    playingS = false;
-    playingD = false;
-    playingF = false;
-  }
-}
